@@ -2,9 +2,9 @@
 Main Driver File
 """
 
-from lexer import tokenize
-from parser import parse
-from serializer import serialize
+from qml_lexer import tokenize
+from qml_parser import parse
+from qml_serializer import serialize
 
 source = open("midterm.quiz").read()
 tokens = tokenize(source)
