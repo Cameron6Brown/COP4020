@@ -1,0 +1,5 @@
+"""
+Serializer Class
+
+Owner: Bryce
+"""
