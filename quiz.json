@@ -2,35 +2,35 @@
     "title": "Cell Test",
     "questions": [
         {
-            "text": "What is the core of the cell?",
+            "text": "What is the power house of the cell?",
             "options": [
                 {
-                    "text": "Golgi",
+                    "text": "Nucleus",
                     "correct": false
                 },
                 {
                     "text": "Mitochondria",
-                    "correct": false
-                },
-                {
-                    "text": "Nucleus",
                     "correct": true
                 },
                 {
                     "text": "Cytoplasm",
                     "correct": false
+                },
+                {
+                    "text": "Golgi",
+                    "correct": false
                 }
             ]
         },
         {
-            "text": "What is the power house of the cell?",
+            "text": "What is the core of the cell?",
             "options": [
                 {
-                    "text": "Mitochondria",
+                    "text": "Nucleus",
                     "correct": true
                 },
                 {
-                    "text": "Nucleus",
+                    "text": "Mitochondria",
                     "correct": false
                 },
                 {

@@ -1,7 +1,6 @@
 from qml_serializer import Serialize
 from qml_ast_nodes import Quiz, Question, Option
 
-s1 = Serialize("quiz.json")
 quest1 = Question("What is the power house of the cell?", 
     {Option("Mitochondria", True), 
     Option("Cytoplasm"),
@@ -13,6 +12,5 @@ quest2 = Question("What is the core of the cell?",
     Option("Nucleus", True),
     Option("Golgi")})
 quiz = Quiz("Cell Test", {quest1, quest2})
-
-s1.serialize_quiz(quiz)
+s1 = Serialize("quiz.json", quiz)
 print(quiz.to_dict())
