@@ -1,11 +1,7 @@
 """
 Lexer Class
 
-<<<<<<< HEAD
-Owner: Cameron
-=======
 Owner: Cam
->>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
 """
 import re
 from qml_token import Token

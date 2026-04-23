@@ -8,10 +8,7 @@ python qml_main.py <filename>
 """
 
 import sys
-<<<<<<< HEAD
 import json
-=======
->>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
 from qml_lexer import tokenize
 from qml_parser import parse
 from qml_serializer import serialize
@@ -34,11 +31,7 @@ def validate(quiz):
 # =========================
 # Main Driver
 # =========================
-<<<<<<< HEAD
 def run_file(filename, print_to_terminal=False):
-=======
-def run_file(filename):
->>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
     if not filename.endswith(".quiz"):
         print(f"Skipping invalid file type: {filename}")
         return
@@ -60,12 +53,9 @@ def run_file(filename):
         output_file = filename.replace(".quiz", ".json")
         serialize(output_file, ast)
 
-<<<<<<< HEAD
         if print_to_terminal:
             print(json.dumps(ast.to_dict(), indent=4, ensure_ascii=False))
 
-=======
->>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
         print(f"Output written to {output_file}.")
 
     except Exception as e:
@@ -77,7 +67,6 @@ def run_file(filename):
 # =========================
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-<<<<<<< HEAD
         print("Usage: python qml_main.py <filename(s)> [--stdout]")
         sys.exit(1)
 
@@ -90,10 +79,3 @@ if __name__ == "__main__":
 
     for filename in filenames:
         run_file(filename, print_to_terminal=print_output)
-=======
-        print("Usage: python qml_main.py <filename(s)>")
-        sys.exit(1)
-
-    for filename in sys.argv[1:]:
-        run_file(filename)
->>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
