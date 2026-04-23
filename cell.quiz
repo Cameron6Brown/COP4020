@@ -1,0 +1,35 @@
+<quiz>
+    <title> The parts of a cell </title>
+
+    <question>
+        <text> What is the power house of the cell? </text>
+        <option> Endoplasmic Reticulum </option>
+        <option> Ribosome </option>
+        <option correct="true"> Mitochondria </option>
+        <option> Golgi Apparatus </option>
+    </question>
+
+    <question>
+        <text> What is the jelly-like substance that resides inside a cell? </text>
+        <option correct="true"> Cytoplasm </option>
+        <option> Cell Membrane </option>
+        <option> DNA </option>
+        <option> Chloroplast </option>
+    </question>
+
+    <question>
+        <text> What is in plant cells, but not animal cells? </text>
+        <option> Cytoplasm and Cell Membrane </option>
+        <option> Ribosome and Cell Wall </option>
+        <option correct="true"> Cell Wall and Chloroplast </option>
+        <option> Chloroplast and Golgi Apparatus </option>
+    </question>
+
+    <question>
+        <text> A plant cell can make its food through what? </text>
+        <option> Cytoplasm </option>
+        <option> Cell Membrane </option>
+        <option> DNA </option>
+        <option correct="true"> Chloroplast </option>
+    </question>
+</quiz>

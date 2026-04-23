@@ -1,0 +1,89 @@
+{
+    "title": "The parts of a cell",
+    "questions": [
+        {
+            "text": "What is the power house of the cell?",
+            "options": [
+                {
+                    "text": "Endoplasmic Reticulum",
+                    "correct": false
+                },
+                {
+                    "text": "Ribosome",
+                    "correct": false
+                },
+                {
+                    "text": "Mitochondria",
+                    "correct": true
+                },
+                {
+                    "text": "Golgi Apparatus",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "What is the jelly-like substance that resides inside a cell?",
+            "options": [
+                {
+                    "text": "Cytoplasm",
+                    "correct": true
+                },
+                {
+                    "text": "Cell Membrane",
+                    "correct": false
+                },
+                {
+                    "text": "DNA",
+                    "correct": false
+                },
+                {
+                    "text": "Chloroplast",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "What is in plant cells, but not animal cells?",
+            "options": [
+                {
+                    "text": "Cytoplasm and Cell Membrane",
+                    "correct": false
+                },
+                {
+                    "text": "Ribosome and Cell Wall",
+                    "correct": false
+                },
+                {
+                    "text": "Cell Wall and Chloroplast",
+                    "correct": true
+                },
+                {
+                    "text": "Chloroplast and Golgi Apparatus",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "text": "A plant cell can make its food through what?",
+            "options": [
+                {
+                    "text": "Cytoplasm",
+                    "correct": false
+                },
+                {
+                    "text": "Cell Membrane",
+                    "correct": false
+                },
+                {
+                    "text": "DNA",
+                    "correct": false
+                },
+                {
+                    "text": "Chloroplast",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+}
