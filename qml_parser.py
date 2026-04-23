@@ -4,7 +4,7 @@ Parser
 Contains:
     class Parse
 
-Owner: Bryce
+Owner: Cameron
 """
 
 from qml_token import Token
