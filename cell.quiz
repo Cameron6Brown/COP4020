@@ -3,7 +3,7 @@
 
     <question>
         <text> What is the power house of the cell? </text>
-        <option> Endoplasmatic Reticulum </option>
+        <option> Endoplasmic Reticulum </option>
         <option> Ribosome </option>
         <option correct="true"> Mitochondria </option>
         <option> Golgi Apparatus </option>
