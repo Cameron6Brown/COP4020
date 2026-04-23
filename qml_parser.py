@@ -9,9 +9,7 @@ Owner: Bryce
 
 from qml_token import Token
 
-class Parse:
-    def parseSource(self):
+def parse(self):
+    ast = []
 
-
-        return self.tokens
-
+    return ast
