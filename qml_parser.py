@@ -48,11 +48,16 @@ class ParserState:
         token = self.current()
 
         if (token.type, token.value) != expected:
+<<<<<<< HEAD
             line = getattr(token, 'line', None)
             column = getattr(token, 'column', None)
             location = f" at line {line}, column {column}" if line is not None else ""
             raise Exception(
                 f"Expected {expected}, got ({token.type}, {token.value}){location}"
+=======
+            raise Exception(
+                f"Expected {expected}, got ({token.type}, {token.value}) at index {self.index}"
+>>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
             )
 
         self.advance()
@@ -64,6 +69,7 @@ class ParserState:
 def parse(tokens):
     try:
         state = ParserState(tokens)
+<<<<<<< HEAD
         ast = quiz(state)
 
         if state.index != len(state.tokens):
@@ -73,6 +79,9 @@ def parse(tokens):
             )
 
         return ast
+=======
+        return quiz(state)
+>>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
     except Exception as e:
         raise Exception(f"[Parse Error] {e}")
 
@@ -103,9 +112,12 @@ def quiz(state):
     while is_question(state):
         questions.append(question(state))
 
+<<<<<<< HEAD
     if len(questions) == 0:
         raise Exception("Quiz must contain at least one question")
 
+=======
+>>>>>>> 00f08925591f042d99a647d4f8a2f61ca24772c3
     state.expect(QUIZ_CLOSE)
 
     return Quiz(title_text, questions)
