@@ -1,5 +1,5 @@
 <quiz>
-    <title> Programming Languages Midterm <title>
+    <title> Programming Languages Midterm </title>
 
     <question>
         <text> Which programming paradigm is considered the most fundamental and aligns with the Von Neumann architecture? </text>
@@ -90,7 +90,7 @@
     </question>
 
     <question>
-        <text> When writing a recursive-descent parser for a rule like A -> b C, what is the first action the function A() should take? </text>
+        <text> When writing a recursive-descent parser for a rule like A to b C, what is the first action the function A() should take? </text>
         <option> Search the dynamic chain for an existing instance of A. </option>
         <option> Enter the terminal b into the Symbol Table. </option>
         <option correct="true"> Compare nextToken with the terminal b; if it matches, call lex() and then call C(). </option>
