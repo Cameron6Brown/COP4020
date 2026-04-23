@@ -29,31 +29,39 @@ MASTER_PATTERN = re.compile(
 
 def tokenize(source: str) -> list:
     """
-    Purpose:
-        Scan QML source -> return list of Tokens
-
-    Discard whitespace tokens. Strip TEXT tokens of whitespace
-    in front & behind, then add to list.
+    Scan QML source -> return list of Tokens
+    Now includes line and column tracking for better error reporting.
     """
-    
+
     tokens = []
 
     for match in MASTER_PATTERN.finditer(source):
         token_type = match.lastgroup
         token_value = match.group()
 
-        # Ignore whitespace between tags
+        start = match.start()
+
+        # Compute line number
+        line = source.count("\n", 0, start) + 1
+
+        # Compute column number
+        last_newline = source.rfind("\n", 0, start)
+        if last_newline == -1:
+            column = start + 1
+        else:
+            column = start - last_newline
+
+        # Ignore whitespace tokens
         if token_type == "WHITESPACE":
             continue
 
         if token_type == "TEXT":
             stripped = token_value.strip()
-            # Whitespace-only node is discarded
             if stripped == "":
                 continue
-            tokens.append(Token(token_type, stripped))
+            tokens.append(Token(token_type, stripped, line, column))
             continue
 
-        tokens.append(Token(token_type, token_value))
+        tokens.append(Token(token_type, token_value, line, column))
 
     return tokens
