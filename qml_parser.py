@@ -39,7 +39,7 @@ def quiz(tokens):
         questions.append(q)
 
     if tokens[index] != QUIZ_CLOSE:
-        raise Exception("Invalid Token")
+        raise Exception("Invalid Token Quiz")
     index += 1
 
     return Quiz(quiz_title, questions)
@@ -52,7 +52,7 @@ def title(tokens, index):
 
         return [text, index]
 
-    raise Exception("Invalid Token")
+    raise Exception("Invalid Token Title")
 
 
 def question(tokens, index):
@@ -70,7 +70,7 @@ def question(tokens, index):
         options.append(o)
 
     if tokens[index] != QUESTION_CLOSE:
-        raise Exception("Invalid Token")
+        raise Exception("Invalid Token Question")
     index += 1
 
     return [Question(question, options), index]
@@ -83,7 +83,7 @@ def text(tokens, index):
 
         return [text, index]
 
-    raise Exception("Invalid Token")
+    raise Exception("Invalid Token Text")
 
 
 def option(tokens, index):
@@ -99,4 +99,4 @@ def option(tokens, index):
 
         return [Option(text, correct), index]
 
-    raise Exception("Invalid Token")
+    raise Exception("Invalid Token Option")
