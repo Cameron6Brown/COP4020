@@ -16,12 +16,13 @@ class Quiz:
 
     def to_dict(self):
         return {
-        "title": self.title,
-        "questions": [q.to_dict() for q in self.questions]
+            "title": self.title,
+            "questions": [q.to_dict() for q in self.questions]
         }
 
     def __repr__(self):
-        return f"Quiz(title={repr(self.title)}, questions={self.questions})"
+        return f"Quiz(title={repr(self.title)},\
+        questions={self.questions})"
     
 class Question:
     def __init__(self, text, options):
@@ -30,12 +31,13 @@ class Question:
 
     def to_dict(self):
         return {
-        "text": self.text,
-        "options": [o.to_dict() for o in self.options]
+            "text": self.text,
+            "options": [o.to_dict() for o in self.options]
         }
 
     def __repr__(self):
-        return f"Question(text={repr(self.text)}, options={self.options})"
+        return f"Question(text={repr(self.text)},\
+            options={self.options})"
     
 class Option:
     def __init__(self, text, correct=False):
@@ -44,9 +46,10 @@ class Option:
 
     def to_dict(self):
         return{
-        "text": self.text,
-        "correct": self.correct
+            "text": self.text,
+            "correct": self.correct
         }
 
     def __repr__(self):
-        return f"Option(text={repr(self.text)}, correct={self.correct})"
+        return f"Option(text={repr(self.text)},\
+        correct={self.correct})"
