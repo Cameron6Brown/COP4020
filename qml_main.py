@@ -8,6 +8,6 @@ from qml_serializer import Serialize
 
 source = open("midterm.quiz").read()
 tokens = tokenize(source)
-ast = Parse(tokens).parse()
+ast = parse(tokens)
 output = Serialize(ast)
 print(output)
