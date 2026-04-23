@@ -17,7 +17,9 @@ class Parse:
     def parseSource(self):
 
         for char in self.source:
-            pass
+            match char:
+                case '<':
+                    continue
 
         return self.tokens
 
