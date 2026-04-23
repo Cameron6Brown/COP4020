@@ -29,65 +29,74 @@ def quiz(tokens):
     if tokens[0] != QUIZ_OPEN:
         raise Exception("Invalid Token")
     
-    tokens.pop(0)
-    quiz_title = title(tokens)
-    questions = [question(tokens)]
-    while tokens[0] == QUESTION_OPEN:
-        questions.append(question(tokens))
+    index = 1
+    quiz_title, index = title(tokens, index)
 
-    if tokens[0] != QUIZ_CLOSE:
+    q, index = question(tokens, index)
+    questions = [q]
+    while tokens[index] == QUESTION_OPEN:
+        q, index = question(tokens, index)
+        questions.append(q)
+
+    if tokens[index] != QUIZ_CLOSE:
         raise Exception("Invalid Token")
+    index += 1
 
     return Quiz(quiz_title, questions)
 
-def title(tokens):
-    if tokens[0] != TITLE_OPEN and tokens[1].type != 'TEXT' and tokens[2] != TITLE_CLOSE:
+def title(tokens, index):
+    if tokens[index] == TITLE_OPEN and tokens[index + 1].type == 'TEXT' and tokens[index + 2] == TITLE_CLOSE:
+        index += 1
+        text = tokens[index].value
+        index += 2
+
+        return [text, index]
+
+    raise Exception("Invalid Token")
+
+
+def question(tokens, index):
+    if tokens[index] != QUESTION_OPEN:
         raise Exception("Invalid Token")
 
-    tokens.pop(0)
-    text = tokens.pop(0).value
-    tokens.pop(0)
+    index += 1
+    question, index = text(tokens, index)
+    o, index = option(tokens, index)
+    options = [o]
+    o, index = option(tokens, index)
+    options.append(o) # 2 or more questions
+    while tokens[index] == OPTION_OPEN or tokens[index] == OPTION_OPEN_CORRECT:
+        o, index = option(tokens, index)
+        options.append(o)
 
-    return text
+    if tokens[index] != QUESTION_CLOSE:
+        raise Exception("Invalid Token")
+    index += 1
 
-def question(tokens):
-    if tokens[0] != QUESTION_OPEN:
+    return [Question(question, options), index]
+
+def text(tokens, index):
+    if tokens[index] == TEXT_OPEN and tokens[index + 1].type == 'TEXT' and tokens[index + 2] == TEXT_CLOSE:
+        index += 1
+        text = tokens[index].value
+        index += 2
+
+        return [text, index]
+
+    raise Exception("Invalid Token")
+
+
+def option(tokens, index):
+    if tokens[index] != OPTION_OPEN and tokens[index] != OPTION_OPEN_CORRECT:
         raise Exception("Invalid Token")
 
-    tokens.pop(0)
-    question = text(tokens)
-    tokens.pop(0)
+    correct = (tokens[index] == OPTION_OPEN_CORRECT)
+    index += 1
 
-    options = [option(tokens)]
-    options.append(option(tokens)) # 2 or more questions
-    while tokens[0] == OPTION_OPEN or tokens[0] == OPTION_OPEN_CORRECT:
-        options.append(option(tokens))
+    if tokens[index].type == 'TEXT' and tokens[index + 1] == OPTION_CLOSE:
+        text = tokens[index].value
+        index +=2
 
-    if tokens[0] != QUESTION_CLOSE:
-        raise Exception("Invalid Token")
+        return [Option(text, correct), index]
 
-    return Question(question, options)
-
-def text(tokens):
-    if tokens[0] != TEXT_OPEN and tokens[1].type != 'TEXT' and tokens[2] != TEXT_CLOSE:
-        raise Exception("Invalid Token")
-
-    tokens.pop(0)
-    text = tokens.pop(0).value
-    tokens.pop(0)
-
-    return text
-
-def option(tokens):
-    if tokens[0] != OPTION_OPEN and tokens[0] != OPTION_OPEN_CORRECT:
-        raise Exception("Invalid Token")
-
-    correct = tokens.pop(0) == OPTION_OPEN_CORRECT 
-
-    if tokens[0].type != 'TEXT' and tokens[1] != OPTION_CLOSE:
-        raise Exception("Invalid Token")
-
-    tokens.pop(0)
-    text = tokens.pop(0).value
-
-    return Option(text, correct)
+    raise Exception("Invalid Token")
