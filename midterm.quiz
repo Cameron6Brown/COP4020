@@ -1,0 +1,99 @@
+<quiz>
+    <title> Programming Languages Midterm <title>
+
+    <question>
+        <text> Which programming paradigm is considered the most fundamental and aligns with the Von Neumann architecture? </text>
+        <option> Object-Oriented </option>
+        <option> Functional </option>
+        <option correct="true"> Imperative </option>
+        <option> Logic </option>
+    </question>
+
+    <question>
+        <text> Which of the following is an example of a hybrid implementation language? </text>
+        <option correct="true"> Java </option>
+        <option> Python </option>
+        <option> C </option>
+        <option> C++ </option>
+    </question>
+
+    <question>
+        <text> In the Chomsky hierarchy, which language type corresponds to a Finite state machine (automata)? </text>
+        <option> Type 0 - Recursively enumerable </option>
+        <option> Type 1 - Context-sensitive </option>
+        <option> Type 2 - Context-free </option>
+        <option correct="true"> Type 3 - Regular </option>
+    </question>
+
+    <question>
+        <text> What are the three components that define a language in formal language theory? </text>
+        <option correct="true"> Alphabet, string, and grammar </option>
+        <option> Lexeme, token, and parser </option>
+        <option> Grammar, automaton, and parser </option>
+        <option> Syntax, semantics, and pragmatics </option>
+    </question>
+
+    <question>
+        <text> Which notation system is typically used to describe the lexical structure of a programming language? (Choose the simplest one as there are complex ones can always cover simple ones)? </text>
+        <option> EBNF </option>
+        <option> BNF </option>
+        <option> Context-sensitive grammar </option>
+        <option correct="true"> Regular expressions </option>
+    </question>
+
+    <question>
+        <text> Which grammar type is typically used to describe the semantics of most of the modern programming language? </text>
+        <option> Context-free grammar </option>
+        <option correct="true"> Context-sensitive grammar </option>
+        <option> Regular grammar </option>
+        <option> Recursively enumerable grammar </option>
+    </question>
+    
+    <question>
+        <text> In an LR(1) parser, what does the number 1 stand for? </text>
+        <option> One token at a time </option>
+        <option> Left-to-right scanning </option>
+        <option> Rightmost derivation </option>
+        <option correct="true"> One token look-ahead </option>
+    </question>
+
+    <question>
+        <text> In a recursive descent parser, each non-terminal in the grammar typically corresponds to: </text>
+        <option> A node in the abstract syntax tree </option>
+        <option correct="true"> A function in the implementation </option>
+        <option> A token in the input stream </option>
+        <option> A state in the parse table </option>
+    </question>
+
+    <question>
+        <text> Shift-reduce parsers are classified as: </text>
+        <option> LL parsers </option>
+        <option> Top-down parsers </option>
+        <option correct="true"> Bottom-up parsers </option>
+        <option> RR parsers </option>
+    </question>
+
+    <question>
+        <text> A "strongly typed" language is one in which: </text>
+        <option> Every variable has a fixed, static lifetime. </option>
+        <option> Only widening conversions (coercions) are allowed. </option>
+        <option> All variables must be declared before use. </option>
+        <option correct="true"> All variables must have a fixed type and implicit type conversion are prohibited. </option>
+    </question>
+
+    <question>
+        <text> A variable that is bound to a memory cell before program execution begins and remains bound until termination is categorized as: </text>
+        <option> Explicit heap-dynamic </option>
+        <option> Implicit heap-dynamic </option>
+        <option correct="true"> static </option>
+        <option> Stack-dynamic </option>
+    </question>
+
+    <question>
+        <text> When writing a recursive-descent parser for a rule like A -> b C, what is the first action the function A() should take? </text>
+        <option> Search the dynamic chain for an existing instance of A. </option>
+        <option> Enter the terminal b into the Symbol Table. </option>
+        <option correct="true"> Compare nextToken with the terminal b; if it matches, call lex() and then call C(). </option>
+        <option> Immediately call the function C(). </option>
+    </question>
+</quiz>
